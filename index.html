@@ -12,17 +12,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="weather-box">
+    <div class="weather-container">
     <header>
-        <form class="search-bar">
-            <input type="search" placeholder="Enter your city..." required class="search-bar-input" />
+        <form class="search-bar" id="search-form">
+            <input type="search" placeholder="Enter your city..." required id="search-bar-input" class="search-bar-input" />
             <input type="submit" value="Search" class="search-bar-btn" />
         </form>
     </header>
     <main>
         <div class="weather-app-forecast">
         <div>
-        <h1 class="current-city">Johannesburg</h1>
+        <h1 class="current-city-location" id="city">Johannesburg</h1>
         <h2 class="current-time">12:26</h2>
         <p class="city-weather-data">
             Thursday 
@@ -50,5 +50,6 @@
         <a href="#" target="_blank">Netlify</a>
     </footer>
     </div>
+    <script src="design.js"></script>
 </body>
 </html>
