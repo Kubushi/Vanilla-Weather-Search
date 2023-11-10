@@ -8,8 +8,8 @@ function updateWeatherDetails(response) {
     let timeElement = document.querySelector("#time-stamp");
     let currentDayElement = document.querySelector("#present-day");
     let date = new Date(response.data.time * 1000)
-
-
+    let iconElement = document.querySelector("#icon");
+   
     temperatureElement.innerHTML = Math.round(temperature);
     cityElement.innerHTML = response.data.city;
     descriptionElement.innerHTML = response.data.condition.description;
@@ -17,6 +17,7 @@ function updateWeatherDetails(response) {
     windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
     timeElement.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
     currentDayElement.innerHTML = formatDate(date);
+    iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" />`;
 }
 
 function formatDate(date) {
@@ -50,4 +51,10 @@ function retrieveSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", retrieveSearchSubmit);
 
-searchCity("Soweto");
+searchCity("Bloemfontein");
+
+ let minutes = date.getMinutes();
+
+    if(minutes < 10) {
+        minutes = `0${minutes}`;
+    }

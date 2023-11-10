@@ -71,13 +71,17 @@ main {
 }
 
 .weather-icon {
-    font-size: 40px;
-    margin-top: 20px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    bottom: -23px;
 }
 
 .city-temperature {
     font-size: 75px;
     margin-left: 15px;
+    position: relative;
+    bottom: -15px;
 }
 
 .temperature-unit {
