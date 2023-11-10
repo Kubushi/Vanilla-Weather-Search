@@ -1,14 +1,14 @@
 body {
-    background: #f9f7fe;
+    background: white;
     font-family: 'Quicksand', sans-serif;
 }
 
 a {
-    color: lightsalmon;
+    color: #f65282;
 }
 
 .weather-container {
-    background: white;
+    background: #dfcdc3;
     max-width: 600px;
     margin: 50px auto;
     padding: 25px;
@@ -32,7 +32,7 @@ header {
 }
 
 .search-bar-btn {
-    background-color: lightsalmon;
+    background-color: #719192;
     border: none;
     border-radius: 5px;
     padding: 17px;
@@ -42,7 +42,7 @@ header {
 }
 
 main {
-    padding: 30px 0;
+    padding: 20px 0;
 }
 
 .current-city-location {
@@ -98,7 +98,7 @@ main {
 
 footer {
     border-top: 1px solid #f9f7fe;
-    padding: 25px 0;
+    padding: 15px 0;
     text-align: center;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.7);
