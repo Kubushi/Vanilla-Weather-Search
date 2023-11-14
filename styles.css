@@ -96,6 +96,10 @@ main {
     justify-content: space-between;
 }
 
+.weekly-forecast-days {
+    text-align: center;
+}
+
 .weekly-weather-forecast {
     display: flex;
     justify-content: space-around;
@@ -105,7 +109,6 @@ main {
 .weekly-forecast-temperatures {
     text-align: center;
         color: #f65282;
-        margin-top: 10px;
         display: flex;
         justify-content: center;
 }
@@ -119,7 +122,7 @@ main {
 .forecast-temperature-min {
     color: #f65282;
     justify-content: center;
-    margin-right: 10px 5px;
+    margin-right: 0 15px;
 }
 .forecast-temperature-max {
     opacity: 75%;
