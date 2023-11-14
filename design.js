@@ -54,6 +54,35 @@ function searchCity(city) {
     axios.get(apiUrl).then(updateWeatherDetails);
 }
 
+function displayForecast() {
+
+    let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+    let forecastHtml = "";
+
+    days.forEach(function (day) {
+        forecastHtml = forecastHtml +
+        `<div class="weekly-weather-forecast">
+            <div class="weekly-forecast-days">${day}</div>
+            <div class="weather-forecast-icon">🌪️</div>
+                <div class="weather-forecast-temperatures">
+                    <span class="forecast-temperature-min">
+                        <strong>11°</strong>
+                    </span><span class="forecast-temperature-max">
+                        <strong>17°</strong></span>
+                 </div>
+            </div>
+        </div>
+    </div>
+`;
+}); 
+
+let forecastElement = document.querySelector("#forecast");
+forecastElement.innerHTML = forecastHtml;
+}
+
+
+
 function retrieveSearchSubmit(event) {
     event.preventDefault();
     let searchInput = document.querySelector("#search-bar-input");
@@ -64,4 +93,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", retrieveSearchSubmit);
 
 searchCity("Bloemfontein");
-newDate();
+displayForecast();
