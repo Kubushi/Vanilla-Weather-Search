@@ -64,3 +64,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", retrieveSearchSubmit);
 
 searchCity("Bloemfontein");
+newDate();
