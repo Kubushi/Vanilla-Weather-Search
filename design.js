@@ -61,20 +61,25 @@ function displayForecast() {
     let forecastHtml = "";
 
     days.forEach(function (day) {
-        forecastHtml = forecastHtml +
-        `<div class="weekly-weather-forecast">
+        forecastHtml = 
+        forecastHtml +
+
+        `
+        <div class="weekly-weather-date">
             <div class="weekly-forecast-days">${day}</div>
             <div class="weather-forecast-icon">🌪️</div>
                 <div class="weather-forecast-temperatures">
                     <span class="forecast-temperature-min">
                         <strong>11°</strong>
-                    </span><span class="forecast-temperature-max">
-                        <strong>17°</strong></span>
+                    </span>
+                    <span class="forecast-temperature-max">
+                        <strong>17°</strong>
+                    </span>
                  </div>
             </div>
-        </div>
-    </div>
-`;
+            </div>
+        </div>`
+    ;
 }); 
 
 let forecastElement = document.querySelector("#forecast");

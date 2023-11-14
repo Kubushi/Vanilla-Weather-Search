@@ -97,23 +97,35 @@ main {
 }
 
 .weekly-weather-forecast {
-    color: black;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
 }
 
-.weekly-forecast-days {
-    font-size: 13px;
+.weekly-forecast-temperatures {
+    text-align: center;
+        color: #f65282;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
 }
 
 .weather-forecast-icon {
-    padding: 11px;
+   font-size: 30px;
+   margin: 15px 0;
+   justify-content: center;
 }
 
-.weather-forecast-temperatures {
-    font-size: 13px;
+.forecast-temperature-min {
+    color: #f65282;
+    justify-content: center;
+    margin-right: 10px 5px;
 }
-
 .forecast-temperature-max {
     opacity: 75%;
+    color: #f65282;
+    justify-content: center;
+    margin-left: 10px;
 }
 
 footer {
