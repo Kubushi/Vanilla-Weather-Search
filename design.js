@@ -5,7 +5,7 @@ function updateWeatherDetails(response) {
     let descriptionElement = document.querySelector("#description");
     let humidityElelment = document.querySelector("#humidity");
     let windSpeedElement = document.querySelector("#wind-speed");
-    let timeElement = document.querySelector("#time-stamp");
+    let timeElement = document.querySelector("#timestamp");
     let currentDayElement = document.querySelector("#present-day");
     let date = new Date(response.data.time * 1000)
     let iconElement = document.querySelector("#icon");
@@ -18,13 +18,15 @@ function updateWeatherDetails(response) {
     timeElement.innerHTML = newDate(date);
     currentDayElement.innerHTML = formatDate(date);
     iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" />`;
+
+    getForecast(response.data.city);
 }
 
 function formatDate(date) {
     let days = ["Sunday", 
                 "Monday", 
                 "Tuesday", 
-                "wednesday", 
+                "Wednesday", 
                 "Thursday", 
                 "Friday", 
                 "Saturday"];
@@ -54,7 +56,23 @@ function searchCity(city) {
     axios.get(apiUrl).then(updateWeatherDetails);
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
+function getForecast(city) {
+    let apiKey = "a7db2f0b5do924083t9a4312e2c436b2";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    console.log(apiUrl);
+
+    axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+    console.log(response.data)
 
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
@@ -98,4 +116,5 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", retrieveSearchSubmit);
 
 searchCity("Bloemfontein");
+
 displayForecast();
