@@ -74,37 +74,36 @@ function getForecast(city) {
 function displayForecast(response) {
     console.log(response.data)
 
-    let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
     let forecastHtml = "";
 
-    days.forEach(function (day) {
+    response.data.daily.forEach(function (day, index) {
+        if (index < 5) {
         forecastHtml = 
         forecastHtml +
 
         `
         <div class="weekly-weather-date">
-            <div class="weekly-forecast-days">${day}</div>
-            <div class="weather-forecast-icon">🌪️</div>
+            <div class="weekly-forecast-days">${formatDay(day.time)}</div>
+                <img src="${day.condition.icon_url}" class="weather-forecast-icon"/>
                 <div class="weather-forecast-temperatures">
-                    <span class="forecast-temperature-min">
-                        <strong>11°</strong>
-                    </span>
                     <span class="forecast-temperature-max">
-                        <strong>17°</strong>
+                        <strong>${Math.round(day.temperature.maximum)}</strong>
+                    </span>
+                    <span class="forecast-temperature-min">
+                        <strong>${Math.round(day.temperature.minimum)}°</strong>
                     </span>
                  </div>
             </div>
             </div>
         </div>`
     ;
+        }
 }); 
 
 let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML = forecastHtml;
 }
-
-
 
 function retrieveSearchSubmit(event) {
     event.preventDefault();
@@ -115,6 +114,6 @@ function retrieveSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", retrieveSearchSubmit);
 
-searchCity("Bloemfontein");
-
+searchCity("Soweto");
+newDate();
 displayForecast();
